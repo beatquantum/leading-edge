@@ -10,7 +10,7 @@ echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read n
 if [ $n -eq 1 ];
 then
-apt-get install apache2 apache2-utils libapache2-mod-fcgid              *"
+apt-get install apache2 apache2-utils libapache2-mod-fcgid 
 a2enmod ssl
 a2enmod rewrite
 a2enmod http2
