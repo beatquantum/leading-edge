@@ -17,9 +17,9 @@ apt-get install gcc -y
 cd /usr/src  
 echo "* Downloading OpenSSL files...(this will take a minute)           *"
 echo "* Source: https://www.openssl.org                                 *"
-sudo wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz --no-check-certificate
-sudo tar -zxf openssl-1.1.1g.tar.gz 
-cd openssl-1.1.1g 
+sudo wget https://www.openssl.org/source/openssl-1.1.1h.tar.gz --no-check-certificate
+sudo tar -zxf openssl-1.1.1h.tar.gz 
+cd openssl-1.1.1h 
 ./config > /dev/null
 echo "* Installing OpenSSL...(have patience!)                           *"
 echo "* Running make...                                                 *"
