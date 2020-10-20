@@ -31,6 +31,6 @@ make install
 echo "* Completing the links...                                         *"
 echo "/usr/local/lib64" > /etc/ld.so.conf.d/openssl.conf
 ldconfig > /dev/null
-echo "* Reboot at your convenience and check the kernel using ssh -V    *"
+echo "* Reboot at your convenience and check with openssl version       *"
 echo "*******************************************************************"
 fi
