@@ -31,10 +31,9 @@ make > /dev/null
 echo "* Running make test...*"
 make test > /dev/null
 echo "* Running make install...*"
-make install
+make install > /dev/null
 echo "* Step 6 - Completing the links...*"
 echo "/usr/local/lib64" > /etc/ld.so.conf.d/openssl.conf
 ldconfig > /dev/null
 echo "* Reboot at your convenience and check with openssl version       *"
 echo "*******************************************************************"
-fi
