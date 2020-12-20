@@ -5,7 +5,7 @@ echo "*******************************************************************"
 echo "* Source: https://github.com/beatquantum/leading-edge.git         *"
 echo "* Author: Santosh Pandit                                          *"
 echo "*******************************************************************"
-echo "Here is your existing OpenSSL version                             *"
+echo "* Here is your existing OpenSSL version                             *"
 openssl version
 echo "*******************************************************************"
 echo "* Updating to OpenSSL version 1.1.1i                              *"
@@ -26,7 +26,7 @@ cd openssl-1.1.1i > /dev/null
 echo "* Step 4 - Running config *"
 ./config > /dev/null
 echo "* Step 5 - Installing OpenSSL *"
-echo "* Running make...*"
+echo "* Running make...(Have patience this takes time...about 3 minutes) *"
 make > /dev/null
 echo "* Running make test...*"
 make test > /dev/null
