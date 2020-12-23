@@ -40,7 +40,7 @@ fi
 ufw enable
 echo "*******************************************************************"
 echo "* VERY IMPORANT                                                    *"
-ECHO "* I assumed your SSH runs on port 22 or 4422.                     *"
+echo "* I assumed your SSH runs on port 22 or 4422.                     *"
 echo "* If you use another port, please change UFW rules manually       *"
 echo "* Here is the current configuration                               *"
 ufw status
