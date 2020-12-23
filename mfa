@@ -34,6 +34,7 @@ echo "* Step 5 - Including AuthenticationMethods in sshd_config *"
 echo "AuthenticationMethods publickey,password publickey,keyboard-interactive" >> /etc/ssh/sshd_config
 sed -i 's/@include common-auth/#@include common-auth/g' /etc/pam.d/sshd
 echo "* Step 6 - Restarting sshd for the second time *"
+systemctl restart sshd.service
 echo "* IMPORTANT - Do not close this window. Open a separate SSH windows and ensure it works. *"
 echo "* If all goes okay, then press 1 to continue or Ctrl-C to abort *"
 read c
