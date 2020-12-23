@@ -12,7 +12,7 @@ if [ $n -eq 1 ];
 then
 echo "* Installing UFW for 22, 4422, 80, 443                            *"
 apt-get update > /dev/null
-apt-get ufw -y > /dev/null
+apt-get install ufw -y > /dev/null
 ufw default deny incoming
 ufw allow in 22/tcp
 ufw allow in 80/tcp
@@ -23,7 +23,7 @@ if [ $n -eq 2 ];
 then
 echo "* Installing UFW for 22, 4422, 80, 443, 25, 110, 143, 465, 587, 993 and 995 *"
 apt-get update > /dev/null
-apt-get ufw -y > /dev/null
+apt-get install ufw -y > /dev/null
 ufw default deny incoming
 ufw allow in 22/tcp
 ufw allow in 80/tcp
