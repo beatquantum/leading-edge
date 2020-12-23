@@ -13,11 +13,11 @@ then
 echo "* Installing UFW for 22, 4422, 80, 443                            *"
 apt-get update > /dev/null
 apt-get install ufw -y > /dev/null
-ufw default deny incoming
-ufw allow in 22/tcp
-ufw allow in 80/tcp
-ufw allow in 443/tcp
-ufw allow in 4422/tcp
+ufw default deny incoming > /dev/null
+ufw allow 22 > /dev/null
+ufw allow 80 > /dev/null
+ufw allow 443 > /dev/null
+ufw allow 4422 > /dev/null
 fi
 if [ $n -eq 2 ];
 then
@@ -25,17 +25,17 @@ echo "* Installing UFW for 22, 4422, 80, 443, 25, 110, 143, 465, 587, 993 and 99
 apt-get update > /dev/null
 apt-get install ufw -y > /dev/null
 ufw default deny incoming
-ufw allow in 22/tcp
-ufw allow in 80/tcp
-ufw allow in 443/tcp
-ufw allow in 4422/tcp
-ufw allow in 25/tcp
-ufw allow in 110/tcp
-ufw allow in 143/tcp
-ufw allow in 465/tcp
-ufw allow in 587/tcp
-ufw allow in 993/tcp
-ufw allow in 995/tcp
+ufw allow in 22
+ufw allow in 25
+ufw allow in 80
+ufw allow in 110
+ufw allow in 143
+ufw allow in 443
+ufw allow in 465
+ufw allow in 587
+ufw allow in 993
+ufw allow in 995
+ufw allow in 4422
 fi
 ufw enable
 echo "*******************************************************************"
