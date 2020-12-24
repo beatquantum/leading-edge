@@ -9,7 +9,7 @@ echo "*******************************************************************"
 echo "* Your current kernel is below                                    *"
 uname -a
 echo "*******************************************************************"
-echo "* Updating to Linux kernel version 5.10.1                          *"
+echo "* Updating to Linux kernel version 5.10.2                          *"
 echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read n
 if [ $n -eq 1 ];
