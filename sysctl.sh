@@ -17,7 +17,7 @@ echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
 echo "kernel.kptr_restrict=2" >> /etc/sysctl.conf
 echo "kernel.core_uses_pid=1" >> /etc/sysctl.conf
 echo "kernel.dmesg_restrict=1" >> /etc/sysctl.conf
-echo "kernel.sysrq=0" >> /etc/sysctl.conf" >> /etc/sysctl.conf
+echo "kernel.sysrq=0" >> /etc/sysctl.conf
 echo "net.ipv4.conf.all.accept_redirects=0" >> /etc/sysctl.conf
 echo "net.ipv4.conf.all.log_martians=1" >> /etc/sysctl.conf
 echo "net.ipv4.conf.all.rp_filter=1" >> /etc/sysctl.conf
@@ -43,4 +43,3 @@ echo "*****************************************************"
 echo "* Do not forget to use sysctl -p after every boot!  *"
 echo "*****************************************************"
 fi
-
