@@ -2,6 +2,8 @@
 
 Dear visitor,
 
+git clone https://github.com/beatquantum/leading-edge
+
 This is a collection of scripts to install the most useful leading edge software for BeatQuantum Labs - my own academic laboratory. 
 
 Please feel free to copy, amend and use any of these scripts. I am strong supporter of open source and free software. You can give me the credit (if you wish) but even that is optional and not expected.
