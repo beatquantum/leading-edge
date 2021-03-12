@@ -25,3 +25,5 @@ echo "install sctp /bin/true" >> /etc/modprobe.d/blacklist.conf
 echo "install rds /bin/true" >> /etc/modprobe.d/blacklist.conf
 echo "install tipc /bin/true" >> /etc/modprobe.d/blacklist.conf
 fi
+echo *" The file is /etc/modprobe.d/blacklist.conf                    *"
+echo "* All done!. Changes will be effective after a reboot. Goodbye. *"
