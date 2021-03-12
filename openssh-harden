@@ -13,3 +13,6 @@ mv /etc/ssh/moduli.reduced /etc/ssh/moduli
 cp sshd_config.example /etc/ssh/sshd_config
 service ssh restart
 echo "* Please note port has been changed to 49022. You can change it again in /etc/ssh/sshd_config *"
+echo "* =========================================================================================== *"
+cat /etc/ssh/sshd_config
+echo "* =========================================================================================== *"
