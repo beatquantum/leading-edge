@@ -1,4 +1,6 @@
 #!/bin/bash
+apt update
+apt install sudo make
 clear
 echo "*******************************************************************"
 echo "* Always use every script thoroughly in a test environment first. *"
