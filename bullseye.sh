@@ -39,7 +39,7 @@ echo "*******************************************************************"
 fi
 if [ $m -eq 2 ];
 then
-cp /backup/source.list /etc/apt/
+cp /backup/sources.list /etc/apt/
 echo "*As requested the original sources.list file has been restored.   *"
 echo "*******************************************************************"
 fi
