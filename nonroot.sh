@@ -13,7 +13,7 @@ then
 echo "* Step 1 - Create a new user named nonroot *"
 adduser nonroot
 usermod -aG sudo nonroot > /dev/null
-echo "* Step 2 - Copy SSH files for root to nonroot" *"
+echo "* Step 2 - Copy SSH files for root to nonroot *"
 sudo mkdir /home/nonroot/.ssh > /dev/null
 sudo cp -rf /root/.ssh/* /home/nonroot/.ssh/ > /dev/null
 chown -R nonroot:nonroot /home/nonroot/.ssh > /dev/null
