@@ -23,8 +23,15 @@ wget -O /etc/apt/trusted.gpg.d/nginx-mainline.gpg https://packages.sury.org/ngin
 echo "deb https://packages.sury.org/nginx-mainline/ bullseye main" > /etc/apt/sources.list.d/nginx-sury.list
 echo "deb-src https://packages.sury.org/nginx-mainline/ bullseye main" >> /etc/apt/sources.list.d/nginx-sury.list
 apt-get update && apt-get upgrade -y
+echo "*******************************************************************"
+apt list nginx
+echo "* Verify that the nginx version above is 1.19.8. Otherwise abort! *"
+read v
+if [ $v -eq 1 ];
+then
 sudo apt-get build-dep nginx
 sudo apt-get source nginx
 hg clone -b quic https://hg.nginx.org/nginx-quic
-
+rsync -rl nginx-quic/ nginx-1.19.8
+fi
 fi
