@@ -6,9 +6,6 @@ echo "*******************************************************************"
 echo "* Source: https://github.com/beatquantum/leading-edge.git         *"
 echo "* Author: Santosh Pandit                                          *"
 echo "*******************************************************************"
-echo "* Manual install of Debian Testing                                *"
-sh bullseye.sh
-echo "*******************************************************************"
 echo "* Manual install of nginx with http/3 and other useful modules    *"
 echo "* Enter 1 to continue or Ctrl-C to abort                          *"
 read n
