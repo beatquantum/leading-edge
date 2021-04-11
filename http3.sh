@@ -33,6 +33,10 @@ sudo apt-get build-dep nginx
 sudo apt-get source nginx
 hg clone -b quic https://hg.nginx.org/nginx-quic
 rsync -rl nginx-quic/ nginx-1.19.8
-
+git clone https://github.com/google/boringssl
+mkdir -p /home/boringssl/build
+cd /home/boringssl/build
+cmake ../
+make
 fi
 fi
