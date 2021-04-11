@@ -15,7 +15,7 @@ read n
 if [ $n -eq 1 ];
 then
 cd /home
-apt-get update && apt-get upgrade -y && apt-get install sudo wget curl haveged hexedit rsync apt-transport-https lsb-release ca-certificates dpkg-dev uuid-dev mercurial golang libunwind-dev -y
+apt-get update && apt-get upgrade -y && apt-get install sudo wget curl cmake haveged hexedit rsync apt-transport-https lsb-release ca-certificates dpkg-dev uuid-dev mercurial golang libunwind-dev -y
 wget https://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
 rm nginx_signing.key
