@@ -38,5 +38,9 @@ mkdir -p /home/boringssl/build
 cd /home/boringssl/build
 cmake ../
 make
+sed -i 's/ssl_preread_module/ssl_preread_module --with-http_v3_module --with-http_quic_module --with-stream_quic_module/' /home/nginx-1.19.8/debian/rules
+export CFLAGS="-Wno-ignored-qualifiers"
+ 
+# After the line 
 fi
 fi
