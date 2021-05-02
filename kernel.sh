@@ -16,10 +16,10 @@ if [ $n -eq 1 ];
 then
 cd /tmp > /dev/null
 echo "* Step 1 : Downloading Linux kernel files...                      *"
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11.17/amd64/linux-headers-5.11.17-051117-generic_5.11.17-051117.202104281235_amd64.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11.17/amd64/linux-headers-5.11.17-051117_5.11.17-051117.202104281235_all.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11.17/amd64/linux-image-unsigned-5.11.17-051117-generic_5.11.17-051117.202104281235_amd64.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11.17/amd64/linux-modules-5.11.17-051117-generic_5.11.17-051117.202104281235_amd64.deb
 echo "* Step 2 : Updating Linux kernel 5.11.17   (patience!)             *"
 dpkg -i *.deb
 echo "* Linux kernel has been updated.                                  *"
@@ -30,10 +30,10 @@ if [ $n -eq 2 ];
 then
 cd /tmp > /dev/null
 echo "* Step 1 : Downloading Linux kernel files...                      *"
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
-wget -c --no-check-certificate 
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.12/amd64/linux-headers-5.12.0-051200-generic_5.12.0-051200.202104252130_amd64.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.12/amd64/linux-headers-5.12.0-051200_5.12.0-051200.202104252130_all.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.12/amd64/linux-image-unsigned-5.12.0-051200-generic_5.12.0-051200.202104252130_amd64.deb
+wget -c --no-check-certificate https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.12/amd64/linux-modules-5.12.0-051200-generic_5.12.0-051200.202104252130_amd64.deb
 echo "* Step 2 : Updating Linux kernel 5.12           ...(patience!)    *"
 dpkg -i *.deb
 echo "* Linux kernel has been updated.                                  *"
