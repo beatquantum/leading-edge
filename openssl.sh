@@ -9,7 +9,7 @@ echo "*******************************************************************"
 echo "* Here is your existing OpenSSL version                             *"
 openssl version
 echo "*******************************************************************"
-echo "* Updating to OpenSSL version 1.1.1k                              *"
+echo "* Updating to OpenSSL version 1.1.1l                              *"
 echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read n
 if [ $n -eq 1 ];
@@ -21,9 +21,9 @@ apt-get install make gcc -y > /dev/null
 cd /usr/src  
 echo "* Step 3 - Downloading OpenSSL files *"
 echo "* Source: https://www.openssl.org                                 *"
-sudo wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz --no-check-certificate > /dev/null
-sudo tar -zxf openssl-1.1.1k.tar.gz > /dev/null
-cd openssl-1.1.1k > /dev/null
+sudo wget https://www.openssl.org/source/openssl-1.1.1l.tar.gz --no-check-certificate > /dev/null
+sudo tar -zxf openssl-1.1.1l.tar.gz > /dev/null
+cd openssl-1.1.1l > /dev/null
 echo "* Step 4 - Running config *"
 ./config > /dev/null
 echo "* Step 5 - Installing OpenSSL *"
