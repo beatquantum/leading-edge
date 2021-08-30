@@ -27,7 +27,7 @@ echo "*(Ignore if you saw an error message- user 'sshd' already exists. *"
 echo "* Step 2 : Downloading OpenSSH...*"
 wget -c --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.7p1.tar.gz > /dev/null
 tar -xzf openssh-8.7p1.tar.gz  > /dev/null
-cd openssh-8.6p1/  > /dev/null
+cd openssh-8.7p1/  > /dev/null
 echo "* Step 3 : Configuring SSH with PAM *"
 ./configure --with-md5-passwords --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh > /dev/null
 echo "* Step 4 : Installing OpenSSH...(have patience!) *"
