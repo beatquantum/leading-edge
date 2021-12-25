@@ -29,7 +29,7 @@ pip install termcolor
 cd /home
 echo "Downloading CISA scanner"
 git clone https://github.com/cisagov/log4j-scanner
-cd log4j-scanner/log4j-scanner
+cd /home/log4j-scanner/log4j-scanner
 echo "Edit the line below to select your own url"
-python3 log4j-scan.py -u https://443.one
+python3 log4j-scan.py -u https://santoshpandit.com
 fi
