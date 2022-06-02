@@ -33,3 +33,11 @@ if [ $n -eq 1 ];
 then
 sh dump.sh
 fi
+echo "*******************************************************************"
+echo "* Do you wish to harden filesystem and protocols                  *"
+echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
+read n
+if [ $n -eq 1 ];
+then
+sh filesystem.sh
+fi
