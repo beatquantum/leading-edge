@@ -31,9 +31,10 @@ if [ $m -eq 1 ];
 then
 echo "* Step 4: Updating sources (15 seconds, have patience             *"
 apt update > /dev/null
-echo "* Step 5: Updating OS to Bullseye (4 minutes, have some tea!)     *"
+echo "* Step 5: Updating OS to unstable (4 minutes, have some tea!)     *"
 apt upgrade -y
-echo "* Debian has been upgraded to Debian Bullseye (testing) 11        *"
+apt full-upgrade -y
+echo "* Debian has been upgraded to Debian Unstable                     *"
 echo "* Reboot and check the OS using lsb_release -a                    *"
 echo "*******************************************************************"
 fi
