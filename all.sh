@@ -34,6 +34,14 @@ then
 cp sshd_config /etc/ssh/
 fi
 echo "*******************************************************************"
+echo "* Do you wish to use the sysctl.conf prototoype                   *"
+echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
+read n
+if [ $n -eq 1 ];
+then
+cp sysctl.conf /etc/
+fi
+echo "*******************************************************************"
 echo "* Do you wish to disable kernel dumps                             *"
 echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
 read n
