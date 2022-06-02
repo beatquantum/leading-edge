@@ -10,6 +10,14 @@ echo "* Basic Stuff                                                     *"
 apt-get update
 apt-get upgrade -y
 echo "*******************************************************************"
+echo "* Do you wish to install basic programs e.g. sudo                 *"
+echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
+read n
+if [ $n -eq 1 ];
+then
+sh basic.sh
+fi
+echo "*******************************************************************"
 echo "* Do you wish to use Debian Unstable?                             *"
 echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
 read n
