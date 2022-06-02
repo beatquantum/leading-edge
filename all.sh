@@ -18,11 +18,11 @@ then
 sh unstable.sh
 fi
 echo "*******************************************************************"
-echo "* Do you wish to use sshd_config prototoype                       *"
+echo "* Do you wish to use the sshd_config prototoype                   *"
 echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
 read n
 if [ $n -eq 1 ];
 then
-cp sshd_config_example /etc/ssh/sshd_config
+cp sshd_config /etc/ssh/
 fi
 echo "*******************************************************************"
