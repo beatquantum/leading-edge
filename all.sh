@@ -26,12 +26,13 @@ then
 sh unstable.sh
 fi
 echo "*******************************************************************"
-echo "* Do you wish to use the sshd_config prototoype                   *"
+echo "* Do you wish to use the sshd_config prototoype with IPv6 and wg  *"
 echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
 read n
 if [ $n -eq 1 ];
 then
 cp sshd_config /etc/ssh/
+sysctl -p
 fi
 echo "*******************************************************************"
 echo "* Do you wish to use the sysctl.conf prototoype                   *"
