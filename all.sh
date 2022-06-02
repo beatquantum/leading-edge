@@ -58,3 +58,11 @@ if [ $n -eq 1 ];
 then
 sh filesystem.sh
 fi
+echo "*******************************************************************"
+echo "* Do you wish to install haveged and improve random numbers       *"
+echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
+read n
+if [ $n -eq 1 ];
+then
+sh haveged.sh
+fi
