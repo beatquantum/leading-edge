@@ -18,6 +18,14 @@ then
 sh basic.sh
 fi
 echo "*******************************************************************"
+echo "* Do you wish to create a nonroot sudoer that uses sshkey?        *"
+echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
+read n
+if [ $n -eq 1 ];
+then
+sh nonroot.sh
+fi
+echo "*******************************************************************"
 echo "* Do you wish to use Debian Unstable?                             *"
 echo "* Enter 1 or 2 to skip, or Ctrl-C to abort                        *"
 read n
