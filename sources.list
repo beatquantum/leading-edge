@@ -1,2 +1,2 @@
-deb http://asi-fs-u.contabo.net/debian unstable main
-deb-src http://asi-fs-u.contabo.net/debian unstable main
+deb http://deb.debian.org/debian sid main
+deb-src http://deb.debian.org/debian sid main
