@@ -29,7 +29,7 @@ wget -c --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/porta
 tar -xzf openssh-9.0p1.tar.gz  > /dev/null
 cd openssh-9.0p1/  > /dev/null
 echo "* Step 3 : Configuring SSH with PAM *"
-./configure --with-md5-passwords --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh > /dev/null
+./configure --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh > /dev/null
 echo "* Step 4 : Installing OpenSSH...(have patience!) *"
 echo "* Running make... *"
 make > /dev/null
