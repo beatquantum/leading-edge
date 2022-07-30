@@ -11,7 +11,7 @@ echo "*******************************************************************"
 echo "* Your current OpenSSH version is the following                   *"
 ssh -V
 echo "*******************************************************************"
-echo "* Updating to OpenSSH version 8.8p1                               *"
+echo "* Updating to OpenSSH version 9.0p1                               *"
 echo "* Source: https://www.openssh.com                                 *"
 echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read n
@@ -25,9 +25,9 @@ chmod -R 700 /var/lib/sshd/ > /dev/null
 useradd -r -U -d /var/lib/sshd/ -c "sshd privsep" -s /bin/false sshd > /dev/null
 echo "*(Ignore if you saw an error message- user 'sshd' already exists. *"
 echo "* Step 2 : Downloading OpenSSH...*"
-wget -c --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.8p1.tar.gz > /dev/null
-tar -xzf openssh-8.8p1.tar.gz  > /dev/null
-cd openssh-8.8p1/  > /dev/null
+wget -c --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz > /dev/null
+tar -xzf openssh-9.0p1.tar.gz  > /dev/null
+cd openssh-9.0p1/  > /dev/null
 echo "* Step 3 : Configuring SSH with PAM *"
 ./configure --with-md5-passwords --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh > /dev/null
 echo "* Step 4 : Installing OpenSSH...(have patience!) *"
