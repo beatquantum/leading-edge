@@ -6,10 +6,10 @@ echo "*******************************************************************"
 echo "* Source: https://github.com/beatquantum/leading-edge.git         *"
 echo "* Author: Santosh Pandit                                          *"
 echo "*******************************************************************"
-echo "* Here is your existing OpenSSL version                             *"
+echo "* Here is your existing OpenSSL version                           *"
 openssl version
 echo "*******************************************************************"
-echo "* Updating to OpenSSL version 3.0.5                              *"
+echo "* Updating to OpenSSL version 3.0.7 for Debian 11 / Ubuntu 22     *"
 echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read n
 if [ $n -eq 1 ];
@@ -21,9 +21,9 @@ apt-get install make gcc -y > /dev/null
 cd /usr/src  
 echo "* Step 3 - Downloading OpenSSL files *"
 echo "* Source: https://www.openssl.org                                 *"
-sudo wget https://www.openssl.org/source/openssl-3.0.5.tar.gz --no-check-certificate > /dev/null
-sudo tar -zxf openssl-3.0.5.tar.gz > /dev/null
-cd openssl-3.0.5 > /dev/null
+sudo wget https://www.openssl.org/source/openssl-3.0.7.tar.gz --no-check-certificate > /dev/null
+sudo tar -zxf openssl-3.0.7.tar.gz > /dev/null
+cd openssl-3.0.7 > /dev/null
 echo "* Step 4 - Running config *"
 ./config > /dev/null
 echo "* Step 5 - Installing OpenSSL *"
