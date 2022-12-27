@@ -25,7 +25,7 @@ sudo wget https://www.openssl.org/source/openssl-3.1.0-beta1.tar.gz --no-check-c
 sudo tar -zxf openssl-3.1.0-beta1.tar.gz > /dev/null
 cd openssl-3.1.0-beta1/ > /dev/null
 echo "* Step 4 - Running config *"
-./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib  > /dev/null
+./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl > /dev/null
 echo "* Step 5 - Installing OpenSSL *"
 echo "* Running make...(Have patience this takes time...about 3 minutes) *"
 make > /dev/null
