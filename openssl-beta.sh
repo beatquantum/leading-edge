@@ -35,16 +35,14 @@ echo "* Running make install...*"
 make install > /dev/null
 echo "* Step 6 - Completing the links...*"
 truncate -s 0/etc/ld.so.conf.d/openssl.conf
-echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl.conf
+echo "/usr/local/ssl/lib64" > /etc/ld.so.conf.d/openssl.conf
 ldconfig -v > /dev/null
 mv /usr/bin/c_rehash /usr/bin/c_rehash.BEKUP
 mv /usr/bin/openssl /usr/bin/openssl.BEKUP
 echo "Append the path to include ":/usr/local/ssl/bin"
 read x
 nano /etc/environment
-echo "Verify Path"
-echo $PATH
-read x
+openssl version
 echo "* Reboot at your convenience and check with openssl version       *"
 echo "*******************************************************************"
 fi
