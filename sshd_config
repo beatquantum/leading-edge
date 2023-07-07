@@ -1,42 +1,74 @@
-## Hardened by Santosh Pandit, Beatquantum Labs
-## Inspired by sshaudit.com - Thank you, Joe.
-## Inspired by lynis - Thank you, Michael.
-## Inspired by STIG guidance - Thank you, STIG team.
-## Please fully test in development environment before using on production.
-## I take no responsibility for any losses or system problems.
+# Author: Santosh Pandit
+# SSH Server Configuration
 
-
-## I suggest you change the line below to allow which users should have access.
-## Best practice removes root and admin; but make sure you have sudoers set up first!
+# Allow login for 'root' and 'nonroot' users.
 AllowUsers root nonroot
 
+# Include any additional configuration files.
 Include /etc/ssh/sshd_config.d/*.conf
 
-# Choose your own port of preference other than port 22
+# SSH listening port, default is 22, this is set to 49022 for added security.
 Port 49022
 
+# Specifies the file containing the private host key used by SSH.
 HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Set log level to VERBOSE for detailed logging.
 LogLevel VERBOSE
+
+# Permit root login but without password. i.e., only key-based authentication is allowed for root.
 PermitRootLogin without-password
+
+# Check file modes and ownership of the user's files and home directory before accepting login.
 StrictModes yes
+
+# Limit the number of authentication attempts allowed per connection.
 MaxAuthTries 3
+
+# Limit the number of sessions per network connection.
 MaxSessions 2
 
+# Ignore rhosts for login.
 IgnoreRhosts yes
+
+# Disable challenge-response passwords.
 ChallengeResponseAuthentication no
 
+# Disable agent forwarding.
 AllowAgentForwarding no
+
+# Disable TCP forwarding.
 AllowTcpForwarding no
+
+# Disable X11 forwarding.
 X11Forwarding no
+
+# Disable message of the day.
 PrintMotd no
+
+# Disable TCP KeepAlive to prevent revealing info about open connections.
 TCPKeepAlive no
+
+# Disable compression.
 Compression no
+
+# Set a low client alive count max to close unresponsive SSH connections.
 ClientAliveCountMax 2
 
+# Accept environment variables for LANG and LC_*
 AcceptEnv LANG LC_*
-Subsystem       sftp    /usr/lib/openssh/sftp-server
 
+# Enable SFTP and specify the path to the SFTP server binary.
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Specify the available KEX (Key Exchange) algorithms.
 KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,sntrup761x25519-sha512@openssh.com
+
+# Specify the available ciphers for encryption.
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com
+
+# Specify the available MAC (Message Authentication Code) algorithms.
 MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com
+
+# Specify the available host key algorithms.
 HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com
