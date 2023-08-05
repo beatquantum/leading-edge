@@ -1,74 +1,75 @@
-# Author: Santosh Pandit
-# SSH Server Configuration
+# AUTHOR: Santosh Pandit
+# File: sysctl.conf
+# This code is licensed under the MIT license. See the LICENSE file for details.
 
-# Allow login for 'root' and 'nonroot' users.
+# Only allow 'root' and 'nonroot' users to log in
 AllowUsers root nonroot
 
-# Include any additional configuration files.
+# Include additional configuration files from the specified directory
 Include /etc/ssh/sshd_config.d/*.conf
 
-# SSH listening port, default is 22, this is set to 49022 for added security.
-Port 49022
-
-# Specifies the file containing the private host key used by SSH.
-HostKey /etc/ssh/ssh_host_ed25519_key
-
-# Set log level to VERBOSE for detailed logging.
-LogLevel VERBOSE
-
-# Permit root login but without password. i.e., only key-based authentication is allowed for root.
-PermitRootLogin without-password
-
-# Check file modes and ownership of the user's files and home directory before accepting login.
-StrictModes yes
-
-# Limit the number of authentication attempts allowed per connection.
-MaxAuthTries 3
-
-# Limit the number of sessions per network connection.
-MaxSessions 2
-
-# Ignore rhosts for login.
-IgnoreRhosts yes
-
-# Disable challenge-response passwords.
-ChallengeResponseAuthentication no
-
-# Disable agent forwarding.
-AllowAgentForwarding no
-
-# Disable TCP forwarding.
-AllowTcpForwarding no
-
-# Disable X11 forwarding.
-X11Forwarding no
-
-# Disable message of the day.
-PrintMotd no
-
-# Disable TCP KeepAlive to prevent revealing info about open connections.
-TCPKeepAlive no
-
-# Disable compression.
-Compression no
-
-# Set a low client alive count max to close unresponsive SSH connections.
-ClientAliveCountMax 2
-
-# Accept environment variables for LANG and LC_*
+# Set accepted environment variables
 AcceptEnv LANG LC_*
 
-# Enable SFTP and specify the path to the SFTP server binary.
-Subsystem sftp /usr/lib/openssh/sftp-server
+# Disable agent forwarding
+AllowAgentForwarding no
 
-# Specify the available KEX (Key Exchange) algorithms.
-KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,sntrup761x25519-sha512@openssh.com
+# Disable TCP forwarding
+AllowTcpForwarding no
 
-# Specify the available ciphers for encryption.
+# Set the preferred cipher suites for SSH connections
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com
 
-# Specify the available MAC (Message Authentication Code) algorithms.
-MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com
+# Set the maximum number of client alive messages without response
+ClientAliveCountMax 2
 
-# Specify the available host key algorithms.
+# Disable compression to improve security
+Compression no
+
+# Location of the host private key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Set the allowed host key algorithms
 HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com
+
+# Disable keyboard-interactive authentication
+KbdInteractiveAuthentication no
+
+# Set the key exchange algorithms used during SSH negotiation
+KexAlgorithms sntrup761x25519-sha512@openssh.com,curve25519-sha256,curve25519-sha256@libssh.org
+
+# Set the logging level to VERBOSE for detailed logs
+LogLevel QUIET
+
+# Set the allowed message authentication codes (MACs)
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
+
+# Limit the maximum number of authentication attempts
+MaxAuthTries 3
+
+# Limit the maximum number of simultaneous sessions per connection
+MaxSessions 2
+
+# Disable password authentication; only allow public key authentication
+PasswordAuthentication no
+
+# Permit root login with a password (prohibit-password is more secure than yes)
+PermitRootLogin prohibit-password
+
+# Set the listening port to 49022
+Port 49022
+
+# Do not print the message of the day (MOTD) during login
+PrintMotd no
+
+# Specify the SFTP subsystem location
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Disable TCP KeepAlive for SSH connections
+TCPKeepAlive no
+
+# Use PAM (Pluggable Authentication Modules) for authentication
+UsePAM yes
+
+# Disable X11 forwarding for security reasons
+X11Forwarding no
