@@ -9,7 +9,7 @@ echo "*******************************************************************"
 echo "* Your current OpenSSH version is the following                   *"
 ssh -V
 echo "*******************************************************************"
-echo "* Updating to OpenSSH version 9.5p1                               *"
+echo "* Updating to OpenSSH version 9.7p1                               *"
 echo "* Source: https://www.openssh.com                                 *"
 echo "* Enter 1 to continue, or Ctrl-C to abort                         *"
 read -r n
@@ -19,9 +19,9 @@ if [ "$n" -eq 1 ]; then
   apt-get install -y build-essential zlib1g-dev libssl-dev libpam0g-dev libselinux1-dev
 
   echo "* Step 2: Downloading OpenSSH... *"
-  wget -q --show-progress --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.5p1.tar.gz
-  tar -xf openssh-9.5p1.tar.gz
-  cd openssh-9.5p1/
+  wget -q --show-progress --no-check-certificate https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.7p1.tar.gz
+  tar -xf openssh-9.7p1.tar.gz
+  cd openssh-9.7p1/
 
   echo "* Step 3: Configuring SSH with PAM *"
   ./configure --with-pam --with-privsep-path=/var/lib/sshd --sysconfdir=/etc/ssh
@@ -34,7 +34,7 @@ if [ "$n" -eq 1 ]; then
 
   echo "* Cleaning up... *"
   cd ..
-  rm -rf openssh-9.5p1 openssh-9.5p1.tar.gz
+  rm -rf openssh-9.7p1 openssh-9.7p1.tar.gz
 
   echo "* Reboot at your convenience and check the OpenSSH version using 'ssh -V' *"
   echo "*******************************************************************"
