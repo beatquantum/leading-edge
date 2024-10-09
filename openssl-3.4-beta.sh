@@ -18,6 +18,7 @@ if [ "$n" -eq 1 ]; then
 
     echo "* Step 2 - Installing make and gcc *"
     apt-get install -y make gcc
+    apt-get install -y libfindbin-libs-perl
 
     echo "* Step 3 - Downloading OpenSSL files *"
     echo "* Source: https://www.openssl.org                                 *"
