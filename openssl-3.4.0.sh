@@ -22,7 +22,7 @@ if [ "$n" -eq 1 ]; then
 
     echo "* Step 3 - Downloading OpenSSL files *"
     echo "* Source: https://www.openssl.org                                 *"
-    version="3.4.0-beta1"
+    version="3.4.0"
     openssl_file="openssl-$version.tar.gz"
     wget -q --no-check-certificate "https://www.openssl.org/source/$openssl_file" -P /usr/src/
     tar -zxf "/usr/src/$openssl_file" -C /usr/src/
